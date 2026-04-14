@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Download RustDesk Remote Support Software - ValuePOS Remote Support Solutions">
+    <meta name="description" content="ValuePOS Remote Support - Download the Technical Support Remote Desktop App">
     <title>Remote Support - ValuePOS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,213 +12,186 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" type="image/png">
     <style>
-        /* Remote Support Page Specific Styles */
+        /* ── Remote Support Page ────────────────────────────────────────────── */
         .remote-hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 100px 0 80px;
+            padding: 110px 0 90px;
             position: relative;
             overflow: hidden;
         }
-
         .remote-hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: url('https://cdn.pixabay.com/photo/2024/01/31/10/45/ai-generated-8543842_1280.jpg') center/cover;
-            opacity: 0.15;
-            z-index: -1;
+            opacity: 0.12;
         }
 
         .hero-content-remote {
             text-align: center;
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
-
         .remote-hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1.2rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
         }
-
         .remote-hero .subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
+        /* ── Download section ────────────────────────────────────────────────── */
         .download-section {
-            padding: 80px 0;
+            padding: 90px 0 100px;
             background: var(--light-color);
         }
 
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .download-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
+        .download-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid var(--light-gray);
-            position: relative;
-            overflow: hidden;
+            gap: 2rem;
         }
 
-        .download-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        /* Tech-support logo/badge */
+        .ts-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
-
-        .download-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .ts-logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 24px;
+            object-fit: contain;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
-
-        .platform-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
+        .ts-logo-fallback {
+            width: 110px;
+            height: 110px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 20px;
-            color: white;
-            font-size: 2.5rem;
-            box-shadow: 0 4px 15px rgba(0,188,212,0.3);
+            font-size: 52px;
+            box-shadow: 0 8px 32px rgba(0,188,212,0.25);
         }
-
-        .download-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
+        .ts-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-dark);
+            text-transform: uppercase;
         }
-
-        .download-card p {
+        .ts-version {
+            font-size: 0.8rem;
             color: var(--gray-color);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            margin-top: -0.5rem;
         }
 
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,188,212,0.3);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,188,212,0.4);
-            text-decoration: none;
-            color: white;
-        }
-
-        .features-section {
-            padding: 80px 0;
+        /* Info card */
+        .info-card {
             background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
-
-        .features-grid-remote {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .info-card p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 0;
         }
-
-        .feature-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .feature-item i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+        .info-card strong {
             color: var(--dark-color);
         }
 
-        .feature-item p {
-            color: var(--gray-color);
-            line-height: 1.6;
-        }
-
-        .back-to-home {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .back-btn {
+        /* The main download button */
+        .download-main-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            color: var(--primary-color);
-            padding: 12px 24px;
-            border: 2px solid var(--primary-color);
-            border-radius: 8px;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 18px 44px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 6px 24px rgba(0,188,212,0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
         }
-
-        .back-btn:hover {
-            background: var(--primary-color);
+        .download-main-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(0,188,212,0.45);
             color: white;
             text-decoration: none;
+        }
+        .download-main-btn:active {
+            transform: translateY(-1px);
+        }
+        .download-main-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Trust badges */
+        .trust-row {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--gray-color);
+        }
+        .trust-item i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Divider */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
-            .remote-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .download-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .platform-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
+            .remote-hero h1 { font-size: 2.4rem; }
+            .download-main-btn {
+                padding: 16px 32px;
+                font-size: 1.05rem;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- ── Header ─────────────────────────────────────────────────────────── -->
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -230,173 +203,88 @@
             </button>
             <nav class="navigation">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#products" class="nav-link">Products</a></li>
-                    <li><a href="index.html#about-us" class="nav-link">About Us</a></li>
-                    <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
-                    <li><a href="remote-support.html" class="nav-link active">Remote Support</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="index.html"             class="nav-link">Home</a></li>
+                    <li><a href="index.html#products"    class="nav-link">Products</a></li>
+                    <li><a href="index.html#about-us"    class="nav-link">About Us</a></li>
+                    <li><a href="index.html#testimonials"class="nav-link">Testimonials</a></li>
+                    <li><a href="remote-support.html"    class="nav-link active">Remote Support</a></li>
+                    <li><a href="index.html#contact"     class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>v
+    </header>
 
     <main>
+
+        <!-- ── Hero ───────────────────────────────────────────────────────── -->
         <section class="remote-hero">
             <div class="container">
                 <div class="hero-content-remote">
                     <h1>Remote Support</h1>
-                    <p class="subtitle">Secure, fast, and reliable remote desktop access for all your devices. Download RustDesk for seamless remote support across all platforms.</p>
+                    <p class="subtitle">
+                        Let our team access your device securely and resolve issues fast —
+                        right from where you are.
+                    </p>
                 </div>
             </div>
         </section>
 
+        <!-- ── Download ───────────────────────────────────────────────────── -->
         <section class="download-section">
             <div class="container">
-                <h2 class="section-title">Download for Your Platform</h2>
-                <p class="section-subtitle">Choose your operating system and download the appropriate version</p>
-                
-                <div class="download-grid">
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-windows"></i>
-                        </div>
-                        <h3>Windows 10+ (64-bit)</h3>
-                        <p>For Windows 10 and later. Compatible with modern 64-bit systems and newer hardware.</p>
-                        <a href="https://release-assets.githubusercontent.com/github-production-release-asset/299354207/b2c22e35-3a9e-4670-895f-5845942e5d74?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-11T16%3A56%3A42Z&rscd=attachment%3B+filename%3Drustdesk-1.4.4-x86_64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-11T15%3A56%3A42Z&ske=2025-12-11T16%3A56%3A42Z&sks=b&skv=2018-11-09&sig=1XbN0YGU2gDY6fT7RYXVJ3PFXGFbhzdVRAEZnZ9FEpw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NTQ3MDUxMiwibmJmIjoxNzY1NDY4NzEyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.OdEVnYpxJVhYGweQ4yUGDHUL48bck5GJjRMdY0lusa4&response-content-disposition=attachment%3B%20filename%3Drustdesk-1.4.4-x86_64.exe&response-content-type=application%2Foctet-stream" 
-                           class="download-btn" 
-                           download>
-                            <i class="fas fa-download"></i>
-                            Download EXE
-                        </a>
+                <div class="download-center">
+
+                    <!-- Logo badge -->
+                    <div class="ts-badge">
+                        <img class="ts-logo"
+                             src="https://i.ibb.co/KpggZfzj/LOGO.png"
+                             alt="Technical Support"
+                             onerror="this.style.display='none'"/>
+                        <span class="ts-name">Technical Support</span>
+                        <span class="ts-version">Remote Desktop  ·  v1.0.0</span>
                     </div>
 
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-windows"></i>
-                        </div>
-                        <h3>Windows 7 (32-bit)</h3>
-                        <p>For Windows 7 32-bit and lower. Compatible with legacy systems and older hardware.</p>
-                        <a href="https://release-assets.githubusercontent.com/github-production-release-asset/299354207/531db44c-8db4-492f-be28-71214ca2d74b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-11T17%3A02%3A09Z&rscd=attachment%3B+filename%3Drustdesk-1.4.3-x86-sciter.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-11T16%3A01%3A41Z&ske=2025-12-11T17%3A02%3A09Z&sks=b&skv=2018-11-09&sig=XHhCz3jZvv0MwkcKzLqIhZFhvh8rnfXzGHLJ3dGnhN0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NTQ3MDcwMSwibmJmIjoxNzY1NDY4OTAxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.oV9rqrUrlLnVvIxUD3mp4WO-jkpEZoeIdOjXuRiauH0&response-content-disposition=attachment%3B%20filename%3Drustdesk-1.4.3-x86-sciter.exe&response-content-type=application%2Foctet-stream" 
-                           class="download-btn" 
-                           download>
-                            <i class="fas fa-download"></i>
-                            Download EXE
-                        </a>
+                    <div class="section-divider"></div>
+
+                    <!-- Info card -->
+                    <div class="info-card">
+                        <p>
+                            Download and run this app to allow a <strong>ValuePOS technician</strong>
+                            to connect to your computer and provide live assistance.
+                            Your session is <strong>encrypted and private</strong> —
+                            you stay in full control.
+                        </p>
                     </div>
 
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <h3>Mac</h3>
-                        <p>For macOS 10.12 and later. Optimized for Apple Silicon and Intel processors.</p>
-                        <a href="https://github.com/rustdesk/rustdesk/releases/download/1.4.0/rustdesk-1.4.0-x86_64.dmg" 
-                           class="download-btn" 
-                           download>
-                            <i class="fas fa-download"></i>
-                            Download DMG
-                        </a>
-                    </div>
-
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-android"></i>
-                        </div>
-                        <h3>Android</h3>
-                        <p>For Android 6.0 and later. Universal APK compatible with all Android devices.</p>
-                        <a href="https://github.com/rustdesk/rustdesk/releases/download/1.4.0/rustdesk-1.4.0-universal-signed.apk" 
-                           class="download-btn" 
-                           download>
-                            <i class="fas fa-download"></i>
-                            Download APK
-                        </a>
-                    </div>
-
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <h3>iOS</h3>
-                        <p>Available on the App Store for iPhone and iPad. iOS 12.0 or later required.</p>
-                        <a href="https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015" 
-                           class="download-btn" 
-                           target="_blank" 
-                           rel="noopener">
-                            <i class="fab fa-app-store-ios"></i>
-                            App Store
-                        </a>
-                    </div>
-
-                    <div class="download-card">
-                        <div class="platform-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Web Browser</h3>
-                        <p>Access RustDesk directly from your browser. No installation required. Works on all modern browsers.</p>
-                        <a href="https://rustdesk.com/web" 
-                           class="download-btn" 
-                           target="_blank" 
-                           rel="noopener">
-                            <i class="fas fa-external-link-alt"></i>
-                            Open Web App
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features-section">
-            <div class="container">
-                <h2 class="section-title">Why Choose RustDesk?</h2>
-                <div class="features-grid-remote">
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Secure & Private</h4>
-                        <p>End-to-end encryption ensures your remote sessions are completely secure and private.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-bolt"></i>
-                        <h4>Fast Performance</h4>
-                        <p>Optimized for speed with low latency and high-quality video streaming.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-users"></i>
-                        <h4>Easy to Use</h4>
-                        <p>Simple setup and intuitive interface makes remote support accessible to everyone.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-desktop"></i>
-                        <h4>Cross-Platform</h4>
-                        <p>Works seamlessly across Windows, macOS, Linux, iOS, and Android devices.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-cog"></i>
-                        <h4>Self-Hosted Option</h4>
-                        <p>Host your own server for complete control over your remote desktop infrastructure.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-dollar-sign"></i>
-                        <h4>Free & Open Source</h4>
-                        <p>Completely free to use with full source code available on GitHub.</p>
-                    </div>
-                </div>
-
-                <div class="back-to-home">
-                    <a href="index.html" class="back-btn">
-                        <i class="fas fa-arrow-left"></i>
-                        Back to Home
+                    <!-- ✅ THE BUTTON — swap href to your Cloudflare R2 URL -->
+                    <a class="download-main-btn"
+                       href="https://pub-cfed2d4ec03e4b65874f34fba9e3110f.r2.dev/TechSupport-RemoteDesktop-Setup.exe"
+                       id="dl-btn">
+                        <i class="fas fa-download"></i>
+                        Download Remote Support App
                     </a>
+
+                    <!-- Trust badges -->
+                    <div class="trust-row">
+                        <span class="trust-item"><i class="fas fa-lock"></i> Encrypted</span>
+                        <span class="trust-item"><i class="fas fa-shield-alt"></i> Secure</span>
+                        <span class="trust-item"><i class="fas fa-eye-slash"></i> Private</span>
+                        <span class="trust-item"><i class="fas fa-windows"></i> Windows</span>
+                    </div>
+
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- ── Footer ─────────────────────────────────────────────────────────── -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="https://imagedelivery.net/S4Dv_qD_dD32Es9cECvglg/0154e9d4-8e71-4f86-4709-0941ef765f00/public" alt="ValuePOS Logo" class="logo-img">
+                    <img src="https://imagedelivery.net/S4Dv_qD_dD32Es9cECvglg/0154e9d4-8e71-4f86-4709-0941ef765f00/public"
+                         alt="ValuePOS Logo" class="logo-img">
                     <h3>ValuePOS</h3>
                 </div>
                 <div class="footer-links">
@@ -437,33 +325,16 @@
     </footer>
 
     <script>
-        // Update current year
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Mobile menu toggle
+
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navigation = document.querySelector('.navigation');
-
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', () => {
                 navigation.classList.toggle('active');
                 mobileMenuToggle.classList.toggle('active');
             });
         }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
